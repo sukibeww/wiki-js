@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <title>Wiki.Js</title>
+</head>
+
+<body>
+  <h1>wiki.js</h1>
+  <a id="random-wiki" href="https://en.wikipedia.org/wiki/Special:Random">Random wiki</a>
+  <input class="searchbar" type="text">
+  <div class="result-wrapper">
+
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const searchBar = document.querySelector(".searchbar");
+    const resultWrapper = document.querySelector(".result-wrapper");
+    let autoCompleteList;
+    let delayTimer;
+    let url;
+
+
+    const params = {
+      action: "query",
+      format: "json",
+      list: "allpages",
+      apfrom: ""
+    };
+    const populateArticles = (result) => {
+      resultWrapper.innerHTML = ""
+      result.forEach((wiki) => {
+        article = `
+        <a href="https://en.wikipedia.org/?curid=${wiki.pageid}">${wiki.title}</a>
+        `
+        resultWrapper.innerHTML += article;
+      })
+    }
+    const pagesAutocomplete = () => {
+      axios.get(url, params)
+        .then((result) => {
+          autoCompleteList = result.data.query.allpages;
+          populateArticles(autoCompleteList);
+        }).catch((err) => {
+          console.log(err);
+        });
+    }
+
+    const doSearch = (e) => {
+      params.apfrom = e.target.value;
+      url = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=allpages&apfrom=${params.apfrom}`
+      url = url + "&origin=*";
+      clearTimeout(delayTimer);
+      delayTimer = setTimeout(() => {
+        pagesAutocomplete();
+      }, 1000);
+    }
+    searchBar.addEventListener("keyup", doSearch);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 10rem;
+  color: #242424;
+  line-height: 0;
+}
+
+body #random-wiki {
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2rem;
+  line-height: 5vh;
+  color: white;
+  text-decoration: none;
+  padding-right: 1vw;
+  padding-left: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  background-color: #242424;
+  margin-bottom: 2vh;
+  border-radius: 30px;
+}
+
+body #random-wiki:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body .searchbar {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2rem;
+  width: 40vw;
+  height: 2vh;
+  padding: 1vw;
+  border: 3px solid white;
+  color: white;
+  border-radius: 10px;
+  background-color: #242424;
+}
+
+body .result-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .result-wrapper a {
+  width: 35vw;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2rem;
+  line-height: 5vh;
+  color: #242424;
+  text-decoration: none;
+  border-radius: 10px;
+  line-height: 7vh;
+  border: 3px solid #242424;
+}
+
+body .result-wrapper a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/*# sourceMappingURL=style.css.map */

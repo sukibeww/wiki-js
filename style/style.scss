@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 10rem;
+    color: rgb(36, 36, 36);
+    line-height: 0;
+  }
+
+  #random-wiki {
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 2rem;
+    line-height: 5vh;
+    color: white;
+    text-decoration: none;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: rgb(36, 36, 36);
+    margin-bottom: 2vh;
+    border-radius: 30px;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.5s;
+    }
+  }
+
+  .searchbar {
+    font-family: 'Varela Round', sans-serif;
+      font-size: 2rem;
+    width: 40vw;
+    height: 2vh;
+    padding: 1vw;
+    border: 3px solid white;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(36, 36, 36);
+  }
+
+  .result-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      width: 35vw;
+      text-align: center;
+      font-family: 'Varela Round', sans-serif;
+      font-size: 2rem;
+      line-height: 5vh;
+      color: rgb(36, 36, 36);
+      text-decoration: none;
+      border-radius: 10px;
+      line-height: 7vh;
+      border: 3px solid rgb(36, 36, 36);
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.5s;
+      }
+    }
+
+  }
+}
